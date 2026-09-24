@@ -1,0 +1,4 @@
+1 hour - introduction class
+2 hour - public speaking / english speaking
+2 hour - linux practice and server management
+2 hour - cloud infrastructure build / vpc
