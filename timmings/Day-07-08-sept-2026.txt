@@ -1,0 +1,5 @@
+3 hours - youtube video
+2 hours - setup cloud infrastructure
+3 hours - app deployment
+2 hours - built ci/cd pipeline
+
