@@ -1,0 +1,7 @@
+3 hour - cloud infrastruture setup
+4 hour - app deployment
+2 hour - jenkins
+2 hour - docker practice
+
+
+
