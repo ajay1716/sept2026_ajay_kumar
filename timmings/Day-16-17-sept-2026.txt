@@ -1,0 +1,4 @@
+3 hour - youtube video
+1 hour - linux server managment practice
+2 hour - docker
+1 hour - ansible
