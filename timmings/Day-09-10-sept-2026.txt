@@ -1,0 +1,5 @@
+  GNU nano 8.7.1                                      timmings/Day-09-10-sept-2026.txt *
+3 hour - youtube vide
+1 hour - introduction practice
+2 hour - lunix practice
+3 hour - aws service vpc , ec2
