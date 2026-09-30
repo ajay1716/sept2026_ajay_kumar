@@ -21,7 +21,7 @@ module "pathnex_instance" {
   vpc_id = module.pathnex_vpc.vpc_id
 }
 
-output "instance_id" {
+ouut "instance_id" {
   value = module.pathnex_instance.instance_id
 }
 
