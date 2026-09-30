@@ -1,0 +1,4 @@
+3 hour - live class
+1 hour - linux practice
+2 hour - aws service
+2 hour - ci/cd pipeline
