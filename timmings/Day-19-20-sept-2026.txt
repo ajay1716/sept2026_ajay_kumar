@@ -1,0 +1,5 @@
+3 hour - youtube video
+2 hour - cloud infrastructure setup practice
+3 hour - deployment practice
+2 hour - ci/cd pipeline
+
