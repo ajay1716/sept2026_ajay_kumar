@@ -1,0 +1,4 @@
+3 hour - youtube video
+2 hour - aws services
+1 hour - linux practice
+2 hour - ci/cd pipelines
