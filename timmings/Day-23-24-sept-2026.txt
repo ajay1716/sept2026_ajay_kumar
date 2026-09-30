@@ -1,0 +1,4 @@
+3 hour - youtube video
+2 hour - linux practice
+3 hour - aws service
+1 hour - ansible practice
