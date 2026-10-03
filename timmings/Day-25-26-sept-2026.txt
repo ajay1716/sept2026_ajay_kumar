@@ -1,0 +1,4 @@
+3 hour - youtube video
+2 hour - linux 
+1 hour - git
+2 hour - aws service
