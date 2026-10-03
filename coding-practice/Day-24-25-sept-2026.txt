@@ -1,0 +1,94 @@
+day 24 - advanced terraform modules and ci/cd pipelines
+
+#ansible - deploy docker containers with kubernetes using helm
+  '''yaml
+   - name: deploy docker containers with helm
+     hosts: localhost
+     tasks: 
+        - name: install helm
+          command:
+        - name: deploy microservices with helm
+          command: helm install pathnex-ap ./microservice-chart
+
+# terraform - multi-module infrastructure with outputs
+  
+   module "pathnex_vpc" {
+      source ="./vpc"
+}
+
+    output "instance_id" {
+        value = module.pathnex_instance.instance_id
+
+}
+
+# kubernetes - helm-based auto-scaling deployments
+
+apiversion:
+kind
+metadata:
+    name:
+ spec:
+    replicas:
+    selector:
+      mathlables:
+         app: pathnex-web-app
+   template:
+     metadata:
+        labels:
+           app: pathnex-web-app
+    spec:
+       containers:
+            - name:
+              iamge:
+              ports:
+                 - conatinerport: 80
+---
+
+apiversion: autoscaling/v2
+kind: horizontalpodautoscaler
+metadata:
+    name: pathnex-web-app-hpa
+   minreplicas:2
+   maxreplicas:10
+   targetcpuutilizationpercentage: 80
+
+# jenkinsfile - scaling ci/cd pipeline
+
+   pipeline {
+      agent any
+       stages {
+          stage(''sacle up) {
+              steps {
+                   echo 'Scaling up Jenkins pipeline agents for heavy workloads...'
+                // Simulating scaling logic
+
+        }
+   
+     }
+
+         stage('build') {
+              steps {
+                  echo '' building project...'
+            }
+        }       
+         stage('deploy') {
+               steps {
+                  echo 'Deploying project...'
+
+}
+}
+
+} 
+
+    
+}
+
+
+
+
+  # docker
+   = healthcheck
+
+
+   from nginx
+   healthcheck cmd curl --fail hhtp://localhost || exit 1

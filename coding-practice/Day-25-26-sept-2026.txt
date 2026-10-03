@@ -1,0 +1,107 @@
+day 26 - security best practices
+
+
+ansible - implementing ssh key-based authentication
+
+- name:
+  hosts:
+  become:
+  taks:
+  - name: generate ssh key pair
+  command: ssh-kwygwn -t rsa -b 2992 -f /home/user/.ssh/id_rsa -n
+  -name: add ssh key to authorized_keys
+   authorized_key:
+     user: user
+      state: present
+       key: "{{ kookup('file','/home/user/.ssh/id_rsa.pub') }}"
+
+
+terraform - enabling vpc flow logs for security
+
+resource "aws_vpc_flow_log" "pathnwx_flow_logs" {
+ log_group_name = "pathnex-flow-logs"
+ vpc_id         = aws_vpc.pathnex_vpc.id
+ traffic_type   = "all"
+ log_destination-type = "cloud-watch-logs"
+ }
+
+
+resource "aws_cloudwatch_log_group" "pathnex_flow_logs_group" {
+  name = "pathnex-flow-logs"
+}
+
+
+jenkins
+
+pipeline {
+  agent any
+
+     stages {
+
+        stage('build') {
+          steps {
+              echo 'Building Docker image...'
+                docker.build('pathnex-web-app')
+
+}
+
+ }
+          stage('deploy') {
+            steps {
+                  echo 'Deploying to AWS EC2...'
+                sh 'aws ec2 run-instances --image-id ami-0abcd1234 --count 1 --instance-type t2.micro'
+}
+
+}
+
+
+}
+
+}
+
+
+kubertes - network policies for security
+
+apiversion: networking.k8s.io/v1
+kind: networkpolicy
+metadata:
+     name: pathnex-web-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: pathnex-web-app
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+      - podSelector:
+         matchLabels:
+              app: pathnex-api
+  egress:
+    - to:
+      - podSelector:
+            matchLabels:
+              app: pathnex-database
+
+
+GitLab CI/CD — Use GitLab Secrets for Secure Deployment
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t pathnex-web-app .
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying with secure credentials"
+    - aws ec2 run-instances --image-id ami-0abcd1234 --count 1 --instance-type t2.micro --access-key $AWS_ACCESS_KEY --secret-key $AWS_SECRET_KEY
+
+
+docker
+docker logs pathnex-nginx
+docker inspect pathnex-nginx

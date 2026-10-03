@@ -1,0 +1,5 @@
+3 hour - youtube video
+2 hour - aws service practice
+3 hour - aws cloud infrastructure
+2 hour - linux server practice
+
