@@ -1,0 +1,73 @@
+day 27 - serverless scaling with lamba and dynmodb
+
+ansible - deploy serverless lamba functions
+
+- name: deploy serverless lamba function
+ hosts: localhost
+ tasks:
+    - name: create lamba function
+      command: aws lambda create-function --function-name pathnex-lamba --runtime modejs14.x --role arn:aws:iam:::123456789012:role/lambda-role --handler index.handler --zip-file fileb://lambda.zip
+
+terraform - crate dynamodb table for serverless application
+
+resource "aws_dynmodb_table" "pathnex_table" {
+   name         ="pathnex-table"
+   hash_key     ="id"
+   billing_mode = "pay_per_request"     
+   attribute {
+      name = "id"
+      type ="s"
+   }
+ }
+
+kubernetes - deploy serverless using kubeless
+
+ apiversion: kubeless.io/v1beta1
+ kind: function
+ metadata:
+    name: pathnex-lamba
+    namespace: default
+ spec:
+   runtime: nodejs14
+   handler: index.handler
+   function:
+       module.exports = function(event, context) {
+           context.suceed('hekllo world');
+};
+
+
+jenkinsfile - lambda function deployment pipeline
+
+
+pipeline {
+  agent any 
+ 
+      stages {
+          stage('build') {
+            steps {
+                echo 'Building Lambda function package...'
+                sh 'zip -r lambda.zip lambda/' 
+            }
+
+        }
+        
+           stage('deploy to lambda') {
+              steps {     
+                 script {
+                    sh 'aws lambda update-function-code --function-name pathnex-lambda --zip-file fileb://lambda.zip'
+
+}
+
+}
+
+}
+}
+}
+
+
+  Docker
+
+docker exec -it pathnex-nginx bash
+docker stats
+
+docker run -d --memory="512m" --cpus="1.0" nginx
