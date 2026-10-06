@@ -1,0 +1,4 @@
+3 hour - topic practice
+2 hour - linux server management
+2 hour - ci/cd setup
+1 hour - vpc setup
