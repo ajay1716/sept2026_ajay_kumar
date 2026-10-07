@@ -1,0 +1,4 @@
+2 hours - yotube video of kubernetes
+2 hours - revise concepts oof how k8s works
+1 hours - eks practice
+1 hour - yaml practice
