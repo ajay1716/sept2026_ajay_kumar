@@ -1,0 +1,4 @@
+3 hour - k8s video
+2 hour - eks practice
+1 hour - introduction
+2 hour - ansible practice
