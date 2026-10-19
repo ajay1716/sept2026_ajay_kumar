@@ -1,0 +1,4 @@
+3 hour - aws infrastruture
+2 hour - linux practice
+1 hour - ansible
+2 hour - docker , k8s
